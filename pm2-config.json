@@ -1,0 +1,11 @@
+{
+  "name": "abedemo",
+  "script": "./node_modules/abe-cli/dist/server/app.js",
+  "args": "serve",
+  "nodeArgs": ["--harmony"],
+  "log_date_format" : "YYYY-MM-DD HH:mm Z",
+  "exec_mode": "fork",
+  "env": {
+    "PORT": "8000"
+  }
+}
