@@ -1,0 +1,34 @@
+# Composer
+/vendor
+
+# Node
+node_modules
+npm-debug.log
+
+# Eclipse
+/.metadata
+/.settings
+/.project
+/.buildpath
+/.classpath
+
+# Sublime
+/.sublime-project
+/.sublime-workspace
+
+# Netbeans
+/nbproject
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Abe
+/comments/
+/users
+/draft
+/logs
+/plugins/abe-*
+hbs
