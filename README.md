@@ -1,23 +1,43 @@
 # recipe-pm2
 This Abe recipe demonstrates how to deploy your Abe project admin in production with [pm2](https://github.com/Unitech/pm2).
 
-## Add pm2 in dependencies in package.json
+This recipe will be split into 3 parts:
 
-This add pm2 in the project dependencies. 
+- Creation of your package.json for your project
+- Creation of your pm2 start script
+- Creation of your pm2 config file
+
+## package.json
+
+If you haven not created a package.json yet, do your homework :) (npm init)
+
+Then you'll add the pm2 dependency:
 
 ```javascript
 {
   "dependencies": {
      "pm2": "2.2.*",
+     "cli-color": "^1.1.0"
     },
 }
 ``` 
 
-Run `npm i` to install dependencies.
+(Run `npm i` to install dependencies).
 
-## Add a [npm](https://www.npmjs.com/) task to manage pm2 via npm.
+Once done, let's add a npm start script:
 
-This task deal with pm2 process to start the process. If the pm2 process is already startn this tasks stop, delete the process an start the process.
+```javascript
+  "scripts": {
+    "start": "./start.js"
+  },
+```
+This will ease your seployment automation. To start Abe admin, you'll just have to enter : npm start
+
+##PM2 script
+
+Add your pm2 start script by creating a start.js file in your project (you can name it as you want and put it in whatever directory you want. Just remember to adjust your package.json accordingly (by modifying the path to your "start" script.
+
+Put the following code in your start.js file. This code will take in charge the startup of PM2:
 
 ```javascript
 'use strict';
@@ -84,21 +104,9 @@ pm2.connect((err) => {
 })
 ```
 
-## Add the tasks in package.json
-
-This allow to add the npm task to run pm2 within your project.
-
-```javascript
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node path/to/start.js"
-  },
-```
-
 ## Add pm2-config.json
 
-This is the config file for pm2. See pm2 process file [documentation](http://pm2.keymetrics.io/docs/usage/application-declaration/)
+This is the config file for pm2. See pm2 process file [documentation](http://pm2.keymetrics.io/docs/usage/application-declaration/) for more details.
 
 ```javascript
 {
