@@ -5,7 +5,7 @@
 You'll find here the default configuration to proxify Abecms through apache 2.*.
 First you need to activate 2 modules `proxy_module` and `proxy_http_module` in Apache config file. If you want to use https you need one more module `proxy_connect_module`.
 
-See [Apache Proxy Documentation](See [locust.io installation](http://docs.locust.io/en/latest/installation.html)) to go further.
+See [Apache Proxy Documentation](http://docs.locust.io/en/latest/installation.html) to go further.
 
 Then you can configure your vhost for your Abecms.
 
@@ -42,5 +42,5 @@ RewriteRule ^abe(.*) http://localhost:3000/abe$1 [P,L]
 
 > With those configurations you can reach your static site at `http://server.example.com` and your Abecms at `http://server.example.com/abe/editor`.
 
-## SSL/TLS
+## SSL
 
