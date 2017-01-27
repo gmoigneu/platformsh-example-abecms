@@ -149,3 +149,5 @@ Then run `npm start`
 You can find how-to configure Apache to proxify Abecms [here](./REVERSE-APACHE.md)
 
 # Nginx as a reverse proxy
+
+You can find how-to configure Nginx to proxify Abecms [here](./REVERSE-NGINX.md)
