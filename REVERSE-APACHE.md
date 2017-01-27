@@ -25,7 +25,7 @@ Then you can configure your vhost for your Abecms.
 ```
 ### ProxyPreserveHost
 
-You should turn `On` in case of multiple Abecms on the same server. This directive will pass the Host: header to the proxied host instead of the hostname specified in the ProxyPass line. 
+You should turn `On` this directive in case of multiple Abecms on the same server. This directive will pass the Host: header to the proxied host instead of the hostname specified in the ProxyPass line. 
 
 ### 
 
