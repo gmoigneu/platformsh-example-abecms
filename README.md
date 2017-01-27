@@ -1,15 +1,16 @@
 # recipe-pm2
 This Abe recipe demonstrates how to deploy your Abe project admin in production with [pm2](https://github.com/Unitech/pm2).
 
-This recipe will be split into 3 parts:
+This recipe will be split into 4 parts:
 
 - Creation of your package.json for your project
 - Creation of your pm2 start script
 - Creation of your pm2 config file
+- Using a reverse proxy (Apache or Nginx)
 
 ## package.json
 
-If you haven not created a package.json yet, do your homework :) (npm init)
+If you have not created a package.json yet, do your homework :) (npm init)
 
 Then you'll add the following dependencies:
 
@@ -27,8 +28,8 @@ Then you'll add the following dependencies:
 (Run `npm i` to install dependencies).
 
 ### abecms
-This will install Abe in your project. You could dcide to use an Abe installed globally, but this is not a best practice: We strongly recommend to have a local Abe installation for each of your projects. This way, you'll be able to select different versions of Abe per project.
-Note also that we recommend to fix the Abe version: Letting a * for the patches to be applied is ok, although in production, a fully fixed version (2.14.5) is better.
+This will install Abe in your project. You could decide to use an Abe installed globally, but this is not a best practice: We strongly recommend to have a local Abe installation for each of your projects. This way, you'll be able to select a different version of Abe for each project.
+Note also that we recommend to fix the Abe version: Letting a * for the patches to be applied is ok, although in production, a fully fixed version (2.14.8) is better.
 
 ### babel-preset-es2015
 Abe is using Babel to transpile the code (we're ECMASCRIPT 2016). If you want to create scripts in your own repo which will extend Abe, add this mandatory dependency to be able to transpile your code.
@@ -39,6 +40,7 @@ We use PM2 in this recipe, so you'd better install it ! :)
 ### cli-color
 This is not mandatory. This dependency will colorize the Abe messages in your console.
 
+### npm start command
 Once done, let's add a npm start script in package.json:
 
 ```javascript
@@ -47,8 +49,9 @@ Once done, let's add a npm start script in package.json:
   },
 ```
 This will ease your deployment automation. To start Abe admin, you'll just have to enter : npm start
+This will launch the PM2 script (see below).
 
-##PM2 script
+## PM2 script
 
 Add your pm2 start script by creating a start.js file in your project (you can name it as you want and put it in whatever directory you want. Just remember to adjust your package.json accordingly (by modifying the path to your "start" script.
 
@@ -122,7 +125,7 @@ pm2.connect((err) => {
 ## Add pm2-config.json
 
 This is the config file for pm2. See pm2 process file [documentation](http://pm2.keymetrics.io/docs/usage/application-declaration/) for more details.
-As a summary, name will give a precise name to your pm2 instance of the project, script is the commnd to launch to start Abe, and we're not in cluster mode (Not possible yet because of the stateful paradigm in Abe).
+As a summary, name will give a precise name to your pm2 instance of the project, script is the command to start Abe, and we're not in cluster mode (Not possible yet because of the stateful paradigm in Abe).
 Last but not least, you can choose the port on which Abe admin will listen (here it's 8012)
 
 ```javascript
@@ -142,12 +145,12 @@ Last but not least, you can choose the port on which Abe admin will listen (here
 
 Then run `npm start`
 
-> That's all ! You're ready to go and launch your production server. As a recommandation, we will show you how to configure a reverse proxy un the following chapter.
+> That's all ! You're ready to go and launch your production server. As a recommandation, we will show you how to configure a reverse proxy in the following chapters.
 
 # Apache as a reverse proxy
 
-You can find how-to configure Apache to proxify Abecms [here](./REVERSE-APACHE.md)
+You can find how to configure Apache to proxify Abecms [here](./REVERSE-APACHE.md)
 
 # Nginx as a reverse proxy
 
-You can find how-to configure Nginx to proxify Abecms [here](./REVERSE-NGINX.md)
+You can find how to configure Nginx to proxify Abecms [here](./REVERSE-NGINX.md)
