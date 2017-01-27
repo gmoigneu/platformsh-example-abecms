@@ -11,11 +11,11 @@ Then you can configure your vhost for your Abecms.
 
 ```apacheconf
 <VirtualHost *:80>
-    ServerName apache.local
-    DocumentRoot /Users/stalefish/git/recip-pm2-egz/site
-    ProxyPreserveHost On
-    AllowEncodedSlashes On
-    ProxyRequests Off
+    ServerName	server.example.com
+    DocumentRoot	/path/to/your/abe/root/site
+    ProxyPreserveHost	On
+    AllowEncodedSlashes	On
+    ProxyRequests	Off
     ProxyPassMatch ^/abe(.*) http://localhost:3000/abe$1 nocanon retry=0
     <Proxy *>
         Options +Includes
