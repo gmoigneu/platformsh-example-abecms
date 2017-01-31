@@ -1,6 +1,6 @@
 {
   "name": "abedemo",
-  "script": "./node_modules/abe-cli/dist/server/app.js",
+  "script": "./node_modules/abecms/dist/server/app.js",
   "args": "serve",
   "nodeArgs": ["--harmony"],
   "log_date_format" : "YYYY-MM-DD HH:mm Z",

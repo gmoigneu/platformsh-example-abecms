@@ -131,7 +131,7 @@ Last but not least, you can choose the port on which Abe admin will listen (here
 ```javascript
 {
   "name": "pm2processname",
-  "script": "./node_modules/abe-cli/dist/server/app.js",
+  "script": "./node_modules/abecms/dist/server/app.js",
   "args": "serve",
   "nodeArgs": ["--harmony","--max-old-space-size=2048"], # You can pass node arguments here
   "log_date_format" : "YYYY-MM-DD HH:mm Z", # Pm2 log format
