@@ -136,7 +136,7 @@ Last but not least, you can choose the port on which Abe admin will listen (here
   "nodeArgs": ["--harmony","--max-old-space-size=2048"], # You can pass node arguments here
   "log_date_format" : "YYYY-MM-DD HH:mm Z", # Pm2 log format
   "exec_mode": "fork", # Pm2 exec mode (fork or cluster)
-  "instances": "-1", # if cluster mode number of intances -1 = server number of cpus -1 
+  "instances": "1", # if cluster mode number of instances -1 = server number of cpus -1 
   "env": {
     "PORT": "8012" # local port to run Abe
   }
