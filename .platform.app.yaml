@@ -7,9 +7,10 @@ dependencies:
 
 web:
   commands:
-    start: "PM2_HOME=$PLATFORM_APP_DIR/run start.js"
+    start: "PM2_HOME=$PLATFORM_APP_DIR/run pm2 start ./node_modules/abecms/dist/server/app.js"
 
 mounts:
   "/run": "shared:files/run"
+  "/templates/hbs": "shared:files/hbs"
 
 disk: 512
