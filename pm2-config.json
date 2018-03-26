@@ -4,5 +4,8 @@
   "args": "serve",
   "nodeArgs": ["--harmony"],
   "log_date_format" : "YYYY-MM-DD HH:mm Z",
-  "exec_mode": "fork"
+  "exec_mode": "fork",
+  "env": {
+    "PORT": "8000"
+  }
 }
