@@ -13,5 +13,6 @@ mounts:
   "/run": "shared:files/run"
   "/templates/hbs": "shared:files/hbs"
   "/site": "shared:files/site"
+  "/data": "shared:files/data"
 
 disk: 512
