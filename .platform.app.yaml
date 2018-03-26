@@ -7,7 +7,7 @@ dependencies:
 
 web:
   commands:
-    start: "PM2_HOME=$PLATFORM_APP_DIR/run pm2 start ./node_modules/abecms/dist/server/app.js"
+    start: "PM2_HOME=$PLATFORM_APP_DIR/run npm start"
 
 mounts:
   "/run": "shared:files/run"
