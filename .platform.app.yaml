@@ -1,0 +1,15 @@
+name: node
+type: nodejs:8.9
+
+dependencies:
+  nodejs:
+    pm2: "^2.2.*"
+
+web:
+  commands:
+    start: "PM2_HOME=$PLATFORM_APP_DIR/run start.js"
+
+mounts:
+  "/run": "shared:files/run"
+
+disk: 512
